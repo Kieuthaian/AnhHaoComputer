@@ -1,0 +1,43 @@
+RewriteEngine On
+#rewrite url chi tiết sản phẩm
+RewriteRule chi-tiet-san-pham/(.*)/([0-9]{1,}) index.php?area=frontend&controller=Product&action=detail&slug=$1&id=$2
+#rewrite url danh sách sản phẩm
+RewriteRule san-pham/(.*)/([0-9]{1,}) index.php?area=frontend&controller=Product&action=productcategory&slug=$1&id=$2
+#rewrite url sản phẩm theo thuowng hiejeu
+RewriteRule san-pham-thuong-hieu/(.*)/([0-9]{1,}) index.php?area=frontend&controller=Product&action=ProductProducer&slug=$1&id=$2
+#rewrite url tin tức
+RewriteRule blogs/(.*)/([0-9]{1,}) index.php?area=frontend&controller=News&action=detail&slug=$1&id=$2
+#rule cho trang giỏ hàng của bạn
+RewriteRule gio-hang-cua-ban index.php?area=frontend&controller=cart&action=index
+#rule cho trang thêm vào giỏ hàng
+RewriteRule them-vao-gio-hang/([0-9]{1,}) index.php?area=frontend&controller=cart&action=add&id=$1
+#rule xóa sản phẩm trong giỏ hàng
+RewriteRule xoa-san-pham/([0-9]{1,}) index.php?area=frontend&controller=cart&action=delete&id=$1
+#rule xóa toàn bộ giỏ hànng
+RewriteRule xoa-toan-bo-san-pham index.php?area=frontend&controller=Cart&action=destroy
+#url thanh toán
+RewriteRule thanh-toan index.php?area=frontend&controller=payment&action=index
+#url login
+RewriteRule dang-nhap index.php?area=frontend&controller=login&action=index
+#rule cho trang logout
+RewriteRule logout index.php?&controller=login&action=logout
+#rule cho trang đăng ký tài khoản
+RewriteRule dang-ky index.php?&controller=login&action=register
+#rule thông tin cá nhân
+RewriteRule thong-tin-ca-nhan index.php?&controller=login&action=updateUser
+#url thanh toán
+RewriteRule thanh-toan index.php?controller=payment&action=index
+#url cảm ơn
+RewriteRule cam-on index.php?controller=payment&action=thank
+#url thanh toán trực tuyến
+RewriteRule thanh-toan-truc-tuyen index.php?controller=payment&action=online
+#rewirte cho trang danh giá
+RewriteRule danh-gia/([0-9]{1,}) index.php?controller=rating&action=index&id=$1
+#rewirte lịch sử mua hàng
+RewriteRule lich-su-mua-hang index.php?controller=Login&action=history
+#rewirte danh sách sản phẩm của đơn hàng
+RewriteRule san-pham-don-hang/([0-9]{1,}) index.php?controller=Login&action=historyallproduct&id=$1
+#rewirte cho trang danh giá
+RewriteRule danh-gia/([0-9]{1,}) index.php?controller=rating&action=index&id=$1
+#rewirte hủy đơn hàng
+RewriteRule huy-don-hang/([0-9]{1,}) index.php?controller=Login&action=delete_orders&id=$1

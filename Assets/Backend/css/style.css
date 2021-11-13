@@ -1,0 +1,10 @@
+.error
+{
+    color: red;
+    font-style: italic;
+    font-size: 12px;
+}
+.box-body
+{
+   /*font-weight: bold !important;*/
+}
